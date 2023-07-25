@@ -1,0 +1,78 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+
+<head>
+<title>This is Home Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+</head>
+
+<body>
+
+	<section>
+		<div id="login">
+			<div  class="container">
+				<div id="login-row" class="row justify-content-center align-items-center">
+					<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+						<div class="card border-0 shadow rounded-3 my-5">
+							<div class="card-body p-4 p-sm-5">
+								<h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
+								<form th:action="@{/dologin}" method="post">
+
+									<div th:if="${param.error}" class="alert alert-danger">
+
+										Invalid Username and Password</div>
+
+									<div th:if="${param.logout}" class="alert alert-success">
+
+										You Have Been Logged Out</div>
+
+
+									<div class="form-floating mb-3">
+										<input type="email" class="form-control" id="floatingInput"
+											placeholder="name@example.com" name="username"> <label
+											for="floatingInput">Email address</label>
+									</div>
+									<div class="form-floating mb-3">
+										<input type="password" class="form-control"
+											id="floatingPassword" placeholder="Password" name="password">
+										<label for="floatingPassword">Password</label>
+									</div>
+
+									<div class="form-check mb-3">
+										<input class="form-check-input " type="checkbox" value=""
+											id="rememberPasswordCheck"> <label
+											class="form-check-label" for="rememberPasswordCheck">
+											Remember password </label> <a href="/signup" class="text-info p-4">Register
+											here</a>
+
+									</div>
+									
+									<div class="container text-center">
+									
+									
+									<a th:href="@{/forgot}">Forgot password</a>
+									
+									</div>
+									
+									<div class="d-grid mt-3">
+										<button
+											class="btn btn-primary btn-login text-uppercase fw-bold"
+											type="submit">Sign in</button>
+									</div>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

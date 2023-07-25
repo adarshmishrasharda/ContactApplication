@@ -1,0 +1,62 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+
+<head>
+<title>About page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+</head>
+
+<body>
+
+	<section>
+
+		<div class="container">
+
+			<div class="card">
+
+				<div class="card-body my-5">
+
+					<div class="container text-center">
+
+
+						<img style="height: 200px; width: 200px;" alt="profile photo"
+							src="" class="profile_picture" th:src="@{'/img/cntact_logo.png'}" />
+
+					</div>
+
+
+					<h1
+						class="text-center mt-3 text-secondary font-italic font-weight-light">Start
+						Adding Your Contact On Cloud..</h1>
+					<div class="d-grid gap-2 mt-4">
+						<a  th:href="@{/user/add-contact}" class="btn btn-primary text-uppercase" type="button">Add New Contact</a>
+					</div>
+
+
+				</div>
+
+			</div>
+
+		</div>
+		<script >
+
+			$(document).ready(()=>{
+				$('.item').removeClass('active');
+
+				$('#home-link').addClass("active");
+			
+			});
+
+
+			
+			</script>
+
+	</section>
+</body>
+
+</html>

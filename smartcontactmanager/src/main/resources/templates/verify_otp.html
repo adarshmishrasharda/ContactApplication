@@ -1,0 +1,63 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+
+<head>
+<title>This is Home Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+</head>
+
+<body>
+
+	<section>
+		<div id="login">
+			<div class="container">
+				<div id="login-row"
+					class="row justify-content-center align-items-center">
+					<div id="login-column" class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+						<div class="card border-0 shadow rounded-3 my-5 ">
+							<div id="login-box" class="card-body p-4 p-sm-5 ">
+
+								<!-- email field -->
+								<div class="alert alert-success" role="alert">We have sent
+									OTP to your email</div>
+
+
+
+
+								<form action="" method="post" th:action="@{/send-otp}">
+
+									<div class="form-group">
+
+										<input name="otp" required type="text"
+											placeholder="Enter otp Here" class="form-control" />
+
+
+
+									</div>
+
+									<div class="container m-3 text-center">
+
+										<button class="btn btn-success">Verify</button>
+
+									</div>
+
+
+
+								</form>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
